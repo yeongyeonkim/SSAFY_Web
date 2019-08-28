@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<!-- form(클라이언트가 입력한 데이터를 서버로 전송하기 위한 태그)
+form 태그 안에서 값을 입력 받을 수 있도록 여러가지 태그가 사용됨
+ -->
+<body>
+	<h1>form  테스트</h1>
+<form action="welcome.jsp" method = "post"> <!-- post는 주소에 데이터 안보임 get은 보임 -->
+		번호: <input type = "text" name = "num"><br>
+		암호: <input type = "password" name = "pass"><br>
+		<hr>
+		<input type="checkbox" name="hobby">movie
+		<input type="checkbox" name="hobby">reading
+		<input type="checkbox" name="hobby">game
+		<input type="checkbox" name="hobby">trip
+		
+		<hr>
+		<input type="radio" name="season">spring
+		<input type="radio" name="season">summer
+		<input type="radio" name="season">autumn
+		<input type="radio" name="season">winter
+		
+		<hr>
+		upload: <input type="file" name="file1"><br>
+		hidden value: <input type ="hidden" name="code" value="123"><br>
+		
+		<hr>
+		<textarea rows="5" cols="30" name="ta">hello...</textarea>
+		
+		<hr>
+		<select name="car">
+			<option value="a">avante</option>
+			<option value="m">morning</option>
+			<option value="g">grandeur</option>
+			<option value="x">x5</option>
+			<option value="s">soul</option>
+		</select>
+		<input type = "submit" value = "전송">
+		<input type = "reset" value = "취소">
+	</form>
+</body>
+</html>
