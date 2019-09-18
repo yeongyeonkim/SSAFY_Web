@@ -1,11 +1,15 @@
 #JSP 구성요소
 
-1. 지시요소
+1. 지시요소(
 
-```
+- 지시어는 JSP에 대한 설정 정보 또는 JSP 페이지에 다른문서를 포함시킬 때 사용
+[page / include / tablib]
+
 <%@ page info="tomcat에 지시할 사항을 적는 부분" %>
 <%@ page import="java.util.ArrayList, java.util.Date" %>
-```
+<%@ page errorPage="error.jsp" %>
+<%-- import 속성을 제외한 다른 속성은 두 번 이상 사용하면 error --%>
+
 
 2. 스크립팅 요소
 
