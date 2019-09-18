@@ -1,5 +1,7 @@
 #JSP 구성요소
 
+============================================================================================================================
+
 1. 지시요소(directive)
 
 - 지시어는 JSP에 대한 설정 정보 또는 JSP 페이지에 다른문서를 포함시킬 때 사용.
@@ -13,6 +15,8 @@
 [include]
 <%@ include file="inner.jsp" %>
 <jsp:include page="inner2.jsp"/>
+
+============================================================================================================================
 
 2. 스크립팅 요소
 
@@ -48,9 +52,34 @@ num: <%= ++num %><br>
 <%= i %>.hello<hr>
 <%} %>
 
+============================================================================================================================
+
 3. 액션 태그
 
 [jsp:forward] : 하나의 JSP 페이지에서 다른 JSP 페이지로 요청 처리를 전달할 때 사용한다.
+
+//login.html
+<form action="forward.jsp" method="post">
+아이디: <input type="text" name="id"><br>
+암호: <input type="password" name="pass"><br>
+<input type="submit" value="전송">
+<input type="reset" value="취소">
+
+//forward.jsp
+<%
+	//이전 화면에서 보낸 값 받아서 체크 후 다음 화면으로 forward
+	String id = request.getParameter("id");
+	String pass = request.getParameter("pass");
+	if(id.equals("tom") && pass.equals("123")){
+		
+%>
+	<jsp:forward page="welcome.jsp">
+		<jsp:param value="<%= id %>" name="id"/>
+	</jsp:forward>
+<%} else{ %>
+
+	<jsp:forward page="login.html"/>
+<%} %>
 
 
 
