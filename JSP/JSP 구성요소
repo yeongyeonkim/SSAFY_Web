@@ -97,6 +97,10 @@ pageContext : 현재 페이지의 내용을 저장하고 있는 객체
 page        : 페이지에 대한 실제 인스턴스(java class)를 저장하고 있는 객체
 Exception   : 이전 페이지의 에러를 저장하고 있는 객체
 
+일반적으로 exception 위의 8가지만 사용 가능 / isErrorPage 속성은 9개까지 사용 가능하다.
+<%-- isErrorPage : error 처리 페이지가 반드시 가져야 되는 지시어 속성 
+내장 객체 중 exception 객체를 사용할 수 있음 --%>
+<%@ page isErrorPage="true" %>
 
 
 
