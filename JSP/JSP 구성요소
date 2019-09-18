@@ -1,1 +1,12 @@
+#JSP 구성요소
 
+1. 지시요소
+
+```
+<%@ page info="tomcat에 지시할 사항을 적는 부분" %>
+<%@ page import="java.util.ArrayList, java.util.Date" %>
+```
+
+2. 스크립팅 요소
+
+3. 액션 요소 - jsp tag
