@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*익명함수:이름이없는함수*/
+	var q = 9;
+	var f1 = function(){//1. 변수에 저장
+		alert('hello');
+	}
+	f1();
+	
+	//2. parameter로도 사용 가능
+	function funtest(some){
+		some();
+	}
+	
+	function go(){
+		alert('gogogo~');
+	}
+	
+	funtest(f1);
+	funtest(go);
+	funtest(function(){
+		alert('go to bed...');
+	})
+	//3. return 값으로도 사용 가능
+	function test(){
+		return function(){
+			alert("here I go!!!!");
+		}
+	}
+	
+	var xx = test();
+	xx();
+	test()();
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

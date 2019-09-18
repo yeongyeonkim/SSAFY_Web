@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function showTime(){
+		var time = new Date();
+		document.write(time.toString() + "<br>");
+	}
+	function stop(){
+		clearInterval(t); //반복작업 멈춤 
+	}
+	var t = setInterval(showTime, 1000); //1초간격으로 함수 반복 실행
+	//반드시 변수에 저장하고 clear에서 사용 
+	setTimeout(stop, 5000); // 5초 후 함수 한번실행 
+		
+</script>
+</head>
+<body>
+​
+</body>
+</html>
