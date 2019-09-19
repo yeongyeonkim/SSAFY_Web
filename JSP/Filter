@@ -1,0 +1,17 @@
+@WebFilter(filterName = "/MyFilter", urlPatterns = {"/HelloServlet", "ByeServlet"})
+annotation 변경.
+urlPatterns : url 창에서 어떤식으로 요청이 들어오면 filter가 역할을 해줄것이냐.
+
+//doFilter():필터가 수행해야 되는 내용을 가지고 있는 메소드ㅎ
+public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	//사전 처리 작업 내용
+	System.out.println("MyFilter...before");
+		
+	chain.doFilter(request, response); //다음 필터나 서블릿으로 request, response 객체 전달
+	
+	//사후 처리 작업 내용
+	System.out.println("MyFilter...after");
+
+
+------------------------------------------------------------------------
+
