@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		//text(), html(), val();
+		$('#b1').click(function(){
+			$('#p1').text('<h1>gogo</h1>');
+		});
+
+		$('#b2').click(function(){
+			$('#p2').html('<h1>gogo</h1>');//text와 html의 적용 차이
+		});
+		
+		$('#b3').click(function(){
+			$('#msg').val('dolly duck!!!');
+		});
+		
+		$('#b4').click(function(){
+			alert(	$('#p1').text() + "\n"
+				  + $('#msg').val() + "\n"
+			      + $('#p2').html()
+			);
+		});
+	});
+</script>
+</head>
+<body>
+	<button id="b1">set text</button>
+	<button id="b2">set html</button>
+	<button id="b3">set value</button>
+	<button id="b4">get value</button>
+	<hr>
+	<p id="p1">this is orange paragraph</p>
+	<p id="p2">this is yellow paragraph</p>
+	<input type="text" id="msg" value="mickey">
+</body>
+</html>

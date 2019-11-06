@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	//jquery를 이용해서 사용자가 작성하는 스크립트 부분ㄴ
+	$(document).ready(function() {
+		$('h1').css('color','red');
+		$('h2').css('color','blue');
+		$('#pink').css('font-size','30pt').css('color','pink');//method chaining
+		$('.orange').css({'color':'orange','font-size':'20pt','font-family':'tahoma'});
+		
+		//각각의 h3 태그에 대해 적용할 내용 지정, 반복작업,루프효과
+		$('h3').each(function(index,item) {
+			if(index%2==0)
+				$(item).css('color','cyan');
+			else
+				$(item).css('color','orange');
+			$(item).css('font-size','30pt');
+			$(this).css('font-family','궁서체');
+		});
+		
+	});
+</script>
+</head>
+<body>
+	<h1>this is h1 tag</h1>
+	<h1>this is h1 tag</h1>
+	<h1>this is h1 tag</h1>
+	<h2>this is h2 tag..</h2>
+	<h2>this is h2 tag..</h2>
+	<h2>this is h2 tag..</h2>
+	<h3>this is h3 tag..</h3>
+	<h3>this is h3 tag..</h3>
+	<h3>this is h3 tag..</h3>
+	<p class="orange">this is p tag</p>
+	<p id="pink">this is another p tag</p>
+	
+</body>
+</html>

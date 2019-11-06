@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(':text').val('hello~'); // 해당 엘리먼트에 값을 setting 함
+		$(':password').css('border', 'solid 2px red');
+		$('[href]').css('text-decoration', 'none');
+		$(':button:first').css('background-color', 'yellow');
+		$(':button:last').css('background-color', 'blue');
+		$(':button:eq(1)').css('background-color', 'green');
+		$('ul li').css('color', 'red');
+	});
+</script>
+</head>
+<body>
+	<input type="text"><br>
+	<input type="password"><br>
+	<input type="button" value="hello"><br>
+	<input type="button" value="hello"><br>
+	<input type="button" value="hello"><br>
+	<a href="#">gogogo</a>
+	
+	<hr>
+		<ul>
+			<li>coffee</li>
+			<li>tea</li>
+			<li>juice</li>
+		</ul>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var xhr = null;
+
+	function getXHR() {//ajax 통신을 하기 위한 객체(XMLHttpRequest) 생성
+		return new XMLHttpRequest();
+	}
+	function sendGet() {//ajax 요청
+		var name = document.getElementById("name");
+		var address = document.getElementById("address");
+		
+		var param = "?name=" + name.value + "&address=" + address.value;
+		//?부터 시작해야하고 변수가 여러개면 변수앞에 &를 붙여준다
+		xhr = getXHR();
+		//alert(xhr)
+		xhr.open("get", "paramTest.jsp" + param, true);//ajax 요청 준비 // param을 붙여줌
+		xhr.onreadystatechange = callback;//readyState 값이 바뀔때마다 실행할 callback 함수 지정
+		xhr.send(null);//ajax 요청 전송. 서버로 요청하는 방식이 get방식이면 send메소드 파라메터는 null
+		
+		name.value = "";
+		address.value = "";
+	}
+	function sendPost() {//ajax 요청
+		var name = document.getElementById("name");
+		var address = document.getElementById("address");
+		
+		var param = "name=" + name.value + "&address=" + address.value; // ?가 없어도됨
+		
+		xhr = getXHR();
+		//alert(xhr)
+		xhr.open("post", "paramTest.jsp", true);//ajax 요청 준비 // post는 파일 이름만
+		xhr.onreadystatechange = callback;//readyState 값이 바뀔때마다 실행할 callback 함수 지정
+		
+		//post 방식으로 데이터 보낼 때 지정해야 함.
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+		
+		xhr.send(param);//여기에 param
+		
+		name.value = "";
+		address.value = "";
+	}
+	function callback(){//callback 함수
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var result = document.getElementById("result");
+			result.innerHTML = "<h1>" + xhr.responseText + "</h1>"; // div, span, p 태그 안에 값을 넣을 때는 innerHTML로 넣음
+			//나머지 입력칸들을 value로 값 넣음
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>ajax param test</h1>
+	name:
+	<input type="text" id="name">
+	<br> address:
+	<input type="text" id="address">
+	<br>
+
+	<button onclick="sendGet()">send get</button>
+	<button onclick="sendPost()">send post</button>
+	<hr>
+	<div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+	2. 함수를 이용한 객체 생성 방법
+	함수 이름 자체가 생성자 역할. 인스턴스 생성시 자동 호출됨.
+	장점: 코드 재사용
+	객체 내부 데이터 접근시 this 키워드 사용
+	*/
+	function User(name, age){
+		this.name = name;
+		this.age = age;
+		this.info = function(){
+			document.write("name:" + this.name + ", age:" + this.age + "<br>");
+		}
+	}
+	//객체 생성
+	var u1 = new User('tommy', 32);
+	var u2 = new User('jane', 22);
+	var u3 = new User('harry', 12);
+	
+	u1.info();
+	u2.info();
+	u3.info();
+	
+	var d = new Date();
+	
+	var a = new Array();
+	a.push('apple');	
+	a.push('orange');	
+	a.push('banana');
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

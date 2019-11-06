@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	
+</style>
+<script type="text/javascript">
+	function idcheck(){
+		//사용자가 입력한 id를 알아와서 중복체크 후 메시지(span)에 표시 
+		var id = document.getElementById("id");
+		var span = document.getElementById("msg");
+		
+		if(id.value == 'tommy'){
+			msg.style.color = 'red';
+			msg.style.display = 'inline';
+			msg.style.fontFamily = '궁서체';
+			msg.innerHTML = "<h5 style='display:inline;'>사용중인 아이디 입니다.</h5>"; //div, span, p에 값 넣을떄는 innerHTML로 넣어야함 
+			id.value = "";//<input type ="text">, password -> value 
+		}else{
+			msg.innerHTML = "사용 가능한 아이디 입니다";
+			//글자색은 파랑
+			msg.style.color = 'blue';
+			msg.style.fontFamily = '궁서체';
+		}
+	}
+	 
+	function check(){
+		//pass 길이 체크 후 메세지 alert로 표시
+		var pass = document.getElementById("pass");
+		if(pass.value.length < 6 || pass.value.length > 10){
+			alert('패스워드는 6~10글자여야 합니다.');
+			pass.value = '';
+			return;
+		}
+		
+		var f = document.getElementById('f');
+		f.action = 'welcome.jsp';
+		f.submit();
+	}
+</script>
+</head>
+<!-- form(클라이언트가 입력한 데이터를 서버로 전송 
+form태그 안에서 값을 입력받을 수 있도록 여러가지 태그가 사용됨
+-->
+<body>
+	<h1>Login</h1>
+	<form method="post" id="f"> <!-- post는 주소에 데이터 안보임 get은 보임 -->
+		아이디: <input type = "text" name = "id" id = "id" onblur="idcheck()"><span id="msg"></span><br>
+		비밀번호: <input type = "password" name = "pass" id="pass">(6글자~10글자)<br>
+		<input type = "button" value = "전송" onclick="check()">
+		<input type = "reset" value = "취소">
+	</form>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var xhr = null;
+
+	function getXHR() {//ajax 통신을 하기 위한 객체(XMLHttpRequest) 생성
+		return new XMLHttpRequest();
+	}
+	function arrayData() {
+		xhr = getXHR();
+		xhr.open("get", "jsonarray.jsp", true);//ajax 요청 준비 // param을 붙여줌
+		xhr.onreadystatechange = callback;
+		xhr.send(null);
+	}
+	function callback(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var arrayDiv = document.getElementById("arrayDiv");
+			var data = eval(xhr.responseText);//배열로 바뀜; jsonarray.jsp?
+			
+			for(var i = 0; i < data.length; i++){
+				arrayDiv.innerHTML += data[i] + "<br>";
+			}
+		}
+	}
+	function collectionData(){
+		xhr = getXHR();
+		xhr.open("get", "jsoncollection.jsp", true);
+		xhr.onreadystatechange = callback1;
+		xhr.send(null);
+	}
+	function callback1(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var colDiv = document.getElementById("colDiv");
+			var json = eval("(" + xhr.responseText + ")");//json 객체로 변환 시키고 싶음
+			var code = document.getElementById("code");
+			
+			var country = json[code.value];
+			
+			colDiv.innerHTML = country;
+			code.value = "";
+		}
+	}
+	function collectionData2(){
+		xhr = getXHR();
+		xhr.open("get", "jsoncollection2.jsp", 'true');//준비작업. true:비동기통신
+		xhr.onreadystatechange = callback2;
+		xhr.send(null);//요청
+	}
+	function callback2(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var code = document.getElementById('code2');
+			var json = eval("(" + xhr.responseText + ")");
+			
+			var who = json[code.value]; // who --> json
+			if(who != null){
+				var name = who.name;// or who['name']
+				var address = who.address;
+				var tel = who.tel;
+				document.getElementById("colDiv2").innerHTML = name + "<br>" + address + "<br>" + tel;
+			}else{
+				document.getElementById("colDiv2").innerHTML = "no data";
+			}
+			document.getElementById("code2").value = "";
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>json array data</h1>
+	<button onclick="arrayData()">array data</button>
+	<div id="arrayDiv"></div>
+	<hr>
+
+	<h1>json collection data</h1>
+	code:
+	<input type="text" id="code">
+	<button onclick="collectionData()">collection data</button>
+	<br>
+	<div id="colDiv"></div>
+	<hr>
+
+	<h1>json collection data2</h1>
+	code2:
+	<input type="text" id="code2">
+	<button onclick="collectionData2()">collection data2</button>
+	<br>
+	<div id="colDiv2"></div>
+	<hr>
+
+
+
+</body>
+</html>

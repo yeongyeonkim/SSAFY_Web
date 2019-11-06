@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function test(code){
+		if(code == 1){
+			alert("click event!");
+		}else if(code == 2){
+			alert("mouseover event!");
+		}else if(code == 3){
+			print();
+		}else if(code == 4){
+			open("http://www.daum.net", "", "width=300px height=300px toolbar=yes");
+		}else {
+			close();
+		}	
+	}
+</script>
+</head>
+<body>
+	<h1 onclick="alert('여')">event test</h1>
+	
+	<!-- <input type="button" value="press">  -->
+	<button onclick="test(1)">click</button>
+	<button onmouseover="test(2)">mouseover</button>
+	<button onclick="test(3)">print</button>
+	<button onclick="test(4)">open</button>
+	<button onclick="test(5)">close</button>
+</body>
+</html>

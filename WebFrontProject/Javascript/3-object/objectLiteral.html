@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var user = {
+			name:"tommy",
+			age:30,
+			showName: function(){
+				document.write("name:" + this.name + "<br>");
+			},
+			showAge: function(){
+				document.write("Age:" + this.age + "<br>");
+			}
+	};
+	
+	user.showAge();
+	document.write(user.name);
+	for(var key in user){
+		document.write(key + ":" + user[key] + "<br>");
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

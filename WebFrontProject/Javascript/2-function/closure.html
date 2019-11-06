@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//closure : 사용범위가 아닌 영역에서도 값을 사용할 수 있도록 함수를 만들어 리턴되는 함수
+	function go(num){
+		var num2 = num * 2 + 10;
+		return function(){
+			alert(num2);
+		}
+	}
+	
+	//alert(num2);
+	var xx = go(11);
+	xx();
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//ajax 호출할 떄 필요한 코딩
+	var xhr = null;
+	
+	function getXHR(){//ajax 통신을 하기 위한 객체(XMLHttpRequest) 생성
+		return new XMLHttpRequest();	
+	}
+	function getData(){//ajax 요청
+		xhr = getXHR();
+	//alert(xhr)
+		xhr.open("get", "firstajax.jsp",  true);//ajax 요청 준비
+		xhr.onreadystatechange = callback;//readyState 값이 바뀔때마다 실행할 callback 함수 지정
+		xhr.send(null);//ajax 요청 전송. 서버로 요청하는 방식이 get방식이면 send메소드 파라메터는 null
+	}
+	function postData(){
+		xhr = getXHR();
+		xhr.open("post", "firstajax.jsp",  true); // post로 바꿔주기.
+		xhr.onreadystatechange = callback;
+		xhr.send(); // post방식은 파라메터 없음
+	}
+	function callback(){//callback 함수
+		//readyState 값에 따라. 
+		//0 : open()호출전 xhr 생성된 직후
+		//1 : open()호출되면
+		//2 : send()호출되면
+		//3 : 서버로부터 응답이 오는 동안
+		//4 : 서버로부터 응답 전송 완료
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var display = document.getElementById("display");
+			display.value = xhr.responseText;
+		}
+	}
+	
+</script>
+</head>
+<body>
+	<h1>ajax test</h1>
+	<button onclick="getData()">get data</button>
+	<button onclick="postData()">post data</button>
+	<hr>
+	<textarea id="display" rows="10" cols="60"></textarea>
+</body>
+</html>

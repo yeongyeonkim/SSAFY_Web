@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	.reverse{
+		background : black;
+		color : white;
+		
+	}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$('#hide').click(function(){
+			$('h1').hide();
+			//$('h1:first').hide();
+		});
+		$('#show').click(function(){
+			$('h1').show();
+		});
+		
+		$('h1').click(function(){
+			alert($(this).html()); // this --> h1사건이 발생한 대상
+		});
+		
+		/*$('h1').on('click', function(){ //위나 아래방식으로 쓰면 됨. 바로 호출하는 (위) on으로 호출하는(아래)
+			alert($(this).html());
+		});*/
+		
+		$('h1').mouseenter(function(){
+			$(this).addClass('reverse');
+		});
+		$('h1').mouseleave(function(){
+			$(this).removeClass('reverse');
+		});
+	});
+	
+
+</script>
+</head>
+<body>
+	<button id="hide">hide</button>
+	<button id="show">show</button>
+	<hr>
+	<h1>header-0</h1>
+	<h1>header-1</h1>
+	<h1>header-2</h1>
+</body>
+</html>

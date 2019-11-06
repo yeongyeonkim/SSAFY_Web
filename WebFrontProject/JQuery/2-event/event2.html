@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$('h1').on('click', function(){
+			var p = $('<p>hello</p>');// 해당 엘리멘트를 생성
+			$('div').append(p);// div 엘리먼트한테 자식으로 추가
+		});
+		//div 엘리먼트 아래에 생기는 p태그에 대해 이벤트를 등록시킴(html로딩 당시에는 p 태그가 존재하지 않음)
+		$('div').on('click', function(){
+			
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>press here</h1>
+	<div></div>
+</body>
+</html>

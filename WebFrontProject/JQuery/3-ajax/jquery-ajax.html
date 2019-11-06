@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('button').click(function(){
+			
+		//서버로 보낼 데이터 받기
+		var name = $('#name').val();//getter
+		var address = $('#address').val();
+			
+		//ajax 요청
+			$.ajax({
+				url:'paramTest.jsp', //서버 url
+				success: function(result){//성공시의 콜백 메소드 지정
+					$('#result').html('<h1>' + result + '</h1>');
+					
+					$('#name').val('');
+					$('#address').val('');
+				},
+				data:{ // 서버로 보낼 데이터
+					name: name,
+					address: address
+				}
+			
+			});
+
+		});
+	});
+</script>
+</head>
+<body>
+	<h1>ajax param test</h1>
+	name:<input type="text" id="name"><br> 
+	address:<input type="text" id="address"><br>
+
+	<button onclick="sendGet()">send get</button>
+	<button onclick="sendPost()">send post</button>
+	<hr>
+	<div id="result"></div>
+</body>
+</html>

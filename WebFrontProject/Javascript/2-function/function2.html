@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/*
+ 1. max(a,b)
+ 2. printName(name)
+ 3. getArea(r)
+ 4. reverse(flag)
+ 5. loopString(msg, count)
+ 6. calc(a, b, op)
+ */
+	function max(a, b){
+		return (a>b) ? a  : b;
+	}
+	function printName(name){
+		document.write('hello ' + name + "<br>");
+	}
+	function getArea(r){
+		return 3.14 * r * r;
+	}
+	function reverse(flag){
+		return !flag;
+	}
+	function loopString(msg, count){
+		for(var i=0; i<count; i++){
+			document.write(msg + "<br>");
+		}		
+	}
+	function calc(a, b, op){
+		switch(op){
+			case '+':
+				alert(a+b);
+				break;
+			case '-':
+				alert(a-b);
+				break;
+			case '*':
+				alert(a*b);
+				break;
+			case '/':
+				alert(a/b);
+				break;
+		}
+	}
+	document.write(max(2,1) + "<br>");
+	printName("요맨");
+	document.write(getArea(3) + "<br>");
+	document.write(reverse(true) + "<br>");
+	loopString("배고파", 3);
+	calc(3,3,'+');
+</script>
+</head>
+<body>
+</body>
+</html>

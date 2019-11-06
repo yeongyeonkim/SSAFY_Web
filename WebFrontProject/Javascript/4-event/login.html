@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check(){
+		//1. id, pass 입력하는 칸 알아내기
+		var id = document.getElementById("id");
+		var pass = document.getElementById("pass");
+		
+		//2. 입력칸 안에 들어있는 값 알아내기
+		var idvalue = id.value;
+		var passvalue = pass.value;
+		
+		//3. 값이 비었는지 체크 ->메세지 띄우기
+		if(idvalue == ""){
+			alert('id를 입력해주세요');
+			return;
+		}
+		if(passvalue == ""){
+			alert('pass를 입력해주세요');
+			return;
+		}
+		
+		//4. 조건을 만족하면 화면 전송하기
+		var f = document.getElementById('f');
+		f.action = 'welcome.jsp';
+		f.submit();
+	}
+</script>
+</head>
+<body>
+<h1>login</h1>
+<form action=welcome.jsp" method="post">
+		아이디: <input type = "text" name = "num"><br>
+		암호: <input type = "password" name = "pass"><br>
+		<input type = "submit" value = "전송">
+		<input type = "reset" value = "취소">
+		</form>
+</body>
+</html>
