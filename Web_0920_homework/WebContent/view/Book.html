@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+<style>
+table {
+   width: 100%; height : 100%;
+   border: 1px solid #bfbfbf;
+   border-collapse: collapse;
+   height: 100%;
+}
+
+th, td {
+   border: 1px solid #bfbfbf;
+}
+</style>
+
+<script type="text/javascript">
+   function check() {
+      var isbn = document.getElementById("isbn");
+      var isbn2 = document.getElementById("isbn2");
+      var isbn3 = document.getElementById("isbn3");
+      var title = document.getElementById("title");
+      var kind = document.getElementById("kind");
+      var author = document.getElementById("author");
+      
+      var bookForm = document.getElementById("bookForm");
+      if (isbn.value == "" || isbn2.value == "" || isbn3.value == "") {
+         alert("도서번호를 입력해주세요");
+         isbn.focus();
+      } else if (title.value == "") {
+         alert("도서제목을 입력해 주세요.");
+         title.focus();
+      }else if(kind.value==""){
+         alert("도서종류를 입력해 주세요.");
+         kind.focus();
+         
+      }else if(author.value==""){
+         alert("저자를 입력해 주세요.");
+         author.focus();
+         
+      }else {
+         bookForm.submit();
+      }
+
+   }
+</script>
+
+</head>
+<body>
+   <form action="main.do?action=register" id="bookForm" method="post">
+      <div style="width: 500px">
+         <div>
+            <h1 align="center" style="background-color: #e6e6e6">도서 등록 화면</h1>
+         </div>
+         <div>
+
+            <table border="1">
+               <tr>
+                  <td colspan="2" style="text-align: right;"><span
+                     style="color: orange;">*</span> 표시가 된 항목은 필수 입력 항목입니다.</td>
+               </tr>
+               <tr>
+                  <td colspan="2" style="background-color: #f2f2f2">&nbsp;</td>
+               </tr>
+               <tr>
+                  <td><span style="color: orange;">*</span>도서번호</td>
+                  <td><input type="text" id="isbn" name="isbn" value="1234"
+                     style="width: 50px">-<input type="text" id="isbn2"
+                     name="isbn2" value="333" style="width: 50px">-<input
+                     type="text" id="isbn3" name="isbn3" value="444"
+                     style="width: 50px"></td>
+               </tr>
+               <tr>
+                  <td><span style="color: orange;">*</span>도서제목</td>
+                  <td><input type="text" id="title" name="title"
+                     value="Servlet & JSP Programming"></td>
+               </tr>
+               <tr>
+                  <td><span style="color: orange;">*</span>도서종류</td>
+                  <td><select name="kind" id="kind">
+                        <option value="">해당 항목을 선택하세요</option>
+                        <option value="프로그래밍">프로그래밍</option>
+                        <option value="소설">소설</option>
+                  </select></td>
+               </tr>
+               <tr>
+                  <td>출판국가</td>
+                  <td><input type="radio" name="inout" value="국내"
+                     checked="checked">국내도서 <input type="radio" name="inout"
+                     value="외국">외국도서</td>
+               </tr>
+               <tr>
+                  <td>출&nbsp;판&nbsp;일</td>
+                  <td><input type="date" name="pubdate"></td>
+               </tr>
+
+               <tr>
+                  <td>출&nbsp;판&nbsp;사</td>
+                  <td><select name=pub>
+                        <option value="">해당 항목을 선택하세요</option>
+                        <option value="ssafy">ssafy</option>
+                        <option value="samsung">samsung</option>
+                  </select></td>
+               </tr>
+
+               <tr>
+                  <td><span style="color: orange;">*</span>저&nbsp;&nbsp;&nbsp;&nbsp;자</td>
+                  <td><input type="text" name="author" id="author" value="홍길동"></td>
+               </tr>
+
+               <tr>
+                  <td>도서가격</td>
+                  <td><input type="text" name="cost" value="30000">&nbsp;
+                     <select name="mk">
+                        <option value="원">원</option>
+                        <option value="달러">달러</option>
+                  </select></td>
+               </tr>
+               <tr>
+                  <td>요약내용</td>
+                  <td style="background-color: #f2f2f2"><textarea
+                        style="width: 98%" name="ex">Servlet과 JSP의 프로그램 기법을 상세히 설명</textarea></td>
+
+               </tr>
+
+            </table>
+         </div>
+         <div style="margin-top: 10px; background-color: #f2f2f2;"
+            align="center">
+            <input type="button" onclick="check()" value="도서등록">&nbsp;<input
+               type="reset" value="취소">
+         </div>
+      </div>
+   </form>
+</body>
+</html>

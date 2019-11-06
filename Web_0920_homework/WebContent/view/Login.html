@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login Page</title>
+
+<script type="text/javascript">
+	function check() {
+		var id = document.getElementById("id");
+		var pass = document.getElementById("pass");
+		var loginForm = document.getElementById("loginForm");
+		if (id.value == "") {
+			alert("아이디를 입력해 주세요.");
+			id.focus();
+		} else if (pass.value == "") {
+			alert("비밀번호를 입력해 주세요.");
+			pass.focus();
+		} else {
+			loginForm.submit();
+		}
+
+	}
+</script>
+</head>
+<body>
+	<form id="loginForm" action="main.do?action=login" method="post">
+		<!-- 액션에 /가 안붙었으니까 뒤에서부터 읽음? -->
+		<!-- <form action="/man.do?action=login" method="get"> -->
+		<!-- 액션에 /가붙으면 8080(포트번호)를기준으로 시작해서 /를 만나면바꿈?  -->
+		<table style="border: 1px solid;">
+			<tr>
+				<td rowspan="5"><img alt="책이미지" src="img/book.jpg" height="150px"></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">로그인하여 주세요</td>
+			</tr>
+			<tr>
+
+				<td style="text-align: right;">ID</td>
+				<td><input type="text" id="id" name="user" value="ssafy">
+				</td>
+			</tr>
+			<tr>
+
+				<td style="text-align: right;">PASSWORD</td>
+				<td><input type="password" id="pass" name="pass" value="1111">
+				</td>
+			</tr>
+			<tr>
+
+				<td></td>
+				<td><input type="button" onclick="check()" value="LOGIN">
+				</td>
+			</tr>
+
+		</table>
+
+	</form>
+	</div>
+</body>
+</html>
