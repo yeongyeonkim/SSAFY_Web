@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<members> 		
+	<member>
+		<num>100</num>
+		<name>tommy jean</name>		
+		<address>seoul</address>
+		<company>lg</company>
+	</member>
+	<member>
+		<num>200</num>
+		<name>jenie</name>
+		<address>paris</address>
+		<company>samsung</company>
+	</member>
+	<member>
+		<num>300</num>
+		<name>harrison</name>
+		<address>newyork</address>
+		<company>lg</company>
+	</member>
+	<member>
+		<num>400</num>
+		<name>minime</name>
+		<address>paris</address>
+		<company>mycom</company>
+	</member>
+	<member>
+		<num>500</num>
+		<name>jasmine</name>
+		<address>bagdad</address>
+		<company>aladdin</company>
+	</member>
+	
+	<member>
+		<num>600</num>
+		<name>aladdin</name>
+		<address>bagdad</address>
+		<company>jasmine</company>
+	</member>
+	
+	<member>
+		<num>700</num>
+		<name>abu</name>
+		<address>bagdad</address>
+		<company>aladdin</company>
+	</member>
+
+</members>
