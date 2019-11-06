@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function check(){
+		var id = document.getElementById("id");
+		var pass = document.getElementById("pass");
+		var loginForm = document.getElementById("loginForm");
+		if(id.value == ""){
+			alert("아이디를 입력해주세요");
+			id.focus();
+		} else if(pass.value == ""){
+			alert("비밀번호를 입력해주세요")
+			pass.focus();
+		} else{
+			loginForm.submit();
+		}
+	}
+</script>
+</head>
+<body>
+	<form id="loginForm" action="main.do?action=login" method="post">
+		<table style="border: 1px solid #000">
+			<tr>
+				<td rowspan="5"><img src="img/book.jpg" alt="책이미지"
+					height="150px"></td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center;">로그인하여 주세요</td>
+			</tr>
+			<tr>
+				<td style="text-align: right;">ID</td>
+				<td><input type="text" id="id" value="ssafy"></td>
+			</tr>
+			<tr>
+				<td style="text-align: right;">PASSWORD</td>
+				<td><input type="password" name="pass" id="pass" value="1111"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" onclick="check()" value="LOGIN"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
