@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function lastcheck(){
+		var ch = document.getElementById("agree");
+		if(ch.checked == true){
+			var f = document.getElementById("f");
+			f.action = 'register.html';
+			f.submit();
+			alert("그동안 이용해주셔서 감사합니다.");
+		}else{
+			alert("회원 탈퇴는 약관에 동의하여야만 합니다.");
+		}
+	}
+</script>
+<style>
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+	margin-bottom: 50px;
+	border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+	margin-bottom: 0;
+}
+
+.dropdown-menu {
+	background-color: #E0F8F7;
+}
+
+.dropdown-item {
+	display: block;
+	font-family: sans-serif;
+	text-indent: 2px;
+	text-align: center;
+}
+
+.delete {
+	border-radius: 5%;
+	width: 550px; height : 440px;
+	font-family: "맑은 고딕";
+	background-color: #F2F2F2;
+	height: 400px;
+}
+/* Add a gray background color and some padding to the footer */
+footer {
+	background-color: #f2f2f2;
+	padding: 25px;
+}
+</style>
+</head>
+<body>
+
+	<div class="jumbotron">
+		<div class="container text-center">
+			<h1>Online Store</h1>
+			<p>Mission, Vission & Values</p>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Logo</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">Deals</a></li>
+					<li><a href="#">Stores</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="glyphicon glyphicon-user" href="#"
+						id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false"> Your Account</a>
+						<div class="dropdown-menu"
+							aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="information.html" style="color: black;">내 프로필 정보</a> 
+							<a class="dropdown-item" href="afterlogin.html">회원 정보 수정</a> 
+							<a class="dropdown-item" href="deleteAccount.html" style="color: red;">회원 탈퇴</a>
+						</div></li>
+					<li><a href="register.html"><span
+							class="glyphicon glyphicon-shopping-cart"
+							style="padding-top: 5px;"></span> 로그아웃</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="col-md-3"></div>
+		<div class="col-md-5">
+			<div class="delete">
+				<div class="form-group">
+					<h3 style="margin: 5px; padding-top:15px; text-align: left; text-indent:10px;">탈퇴 안내</h3>
+				</div><br>
+				<div class="col-md-12">
+					<h5 style="text-align:center;"><b>[사용하고 계신 아이디는 탈퇴할 경우 재사용 및 복구가 불가능합니다.]</b></h5><br>
+					<span style="color:red;">탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가</span>하오니<p></p> 신중하게 선택하시기 바랍니다. 
+					<br><br>
+					<h5 style="text-align:center;"><b>[탈퇴 후 회원정보 및 개인형 서비스 이용기록은 모두 삭제됩니다.]</b></h5><br>
+					회원정보 및 메일, 블로그, 주소록 등 개인형 서비스 이용기록은 모두 삭제되며,<p></p>
+					 삭제된 데이터는 복구되지 않습니다. 삭제되는 내용을 확인하시고 필요한 데이터는<p></p> 미리 백업을 해주세요.  
+					<br>
+					<form id="f">
+					<br>
+					&nbsp;&nbsp;
+						<input type="checkbox" id="agree"><b> 안내 사항을 모두 확인하였으며, 이에 동의합니다.</b>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="button" onclick="lastcheck()" value="확인" style="color:green;">
+					</form>
+				</div>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+	<br>
+	<br>
+
+	<footer class="container-fluid text-center">
+		<p>Online Store Copyright</p>
+		<form class="form-inline">
+			Get deals: <input type="email" class="form-control" size="50"
+				placeholder="Email Address">
+			<button type="button" class="btn btn-danger">Sign Up</button>
+		</form>
+	</footer>
+
+</body>
+</html>

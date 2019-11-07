@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>Bootstrap Example</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	function check(){
+		//pass 길이 체크 후 메세지 alert로 표시
+		var pass = document.getElementById("pass");
+		var msg = document.getElementById("pw_msg");
+		if(pass.value.length < 6 || pass.value.length > 10){
+			msg.innerHTML = "6~10자리의 비밀번호를 입력해주세요.";
+			msg.style.color="red";
+		}
+		else{
+			msg.innerHTML = "";
+		}
+	}
+	function moveNext() {
+		var ssn1 = document.getElementById("ssn1");
+		var ssn2 = document.getElementById("ssn2");
+		var ssn3 = document.getElementById("ssn3");
+		if (ssn1.value == '011') {
+			ssn2.focus();
+			if ((ssn2.value + "").length == 3)
+				ssn3.focus();
+
+		} else {
+			ssn2.focus();
+			if ((ssn2.value + "").length == 4)
+				ssn3.focus();
+		}
+	}
+	function numberMaxLength(e) {
+		if (e.value.length > e.maxLength) {
+			e.value = e.value.slice(0, e.maxLength);
+		}
+	}
+</script>
+<style>
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+	margin-bottom: 50px;
+	border-radius: 0;
+}
+
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+	margin-bottom: 0;
+}
+
+.dropdown-menu {
+	background-color: #E0F8F7;
+}
+
+.dropdown-item {
+	display: block;
+	font-family: sans-serif;
+	text-indent: 2px;
+	text-align: center;
+}
+
+.register {
+	border-radius: 5%;
+	height: 800px;
+	font-family: "맑은 고딕";
+	background-color: #F2F2F2;
+}
+/* Add a gray background color and some padding to the footer */
+footer {
+	background-color: #f2f2f2;
+	padding: 25px;
+}
+</style>
+</head>
+<body>
+
+	<div class="jumbotron">
+		<div class="container text-center">
+			<h1>Online Store</h1>
+			<p>Mission, Vission & Values</p>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Logo</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">Deals</a></li>
+					<li><a href="#">Stores</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="glyphicon glyphicon-user" href="#"
+						id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+						aria-haspopup="true" aria-expanded="false"> Your Account</a>
+						<div class="dropdown-menu"
+							aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="information.html" style="color: black;">내 프로필 정보</a> 
+							<a class="dropdown-item" href="afterlogin.html">회원 정보 수정</a>
+							<a class="dropdown-item" href="deleteAccount.html"
+								style="color: red;">회원 탈퇴</a>
+						</div></li>
+					<li><a href="register.html"><span
+							class="glyphicon glyphicon-shopping-cart"
+							style="padding-top: 5px;"></span> 로그아웃</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<div class="register">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<h3 style="text-align: center;">내 프로필 정보</h3>
+						</div>
+						<br>
+						<div class="form-group">
+							<label for="inputName" class="col-sm-3 control-label">아이디</label>
+							<div class="col-sm-7" style="margin-top:6px;">
+							dudtbd
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label for="inputEmail" class="col-sm-3 control-label">Email</label>
+							<div class="col-sm-7" style="margin-top:6px;">
+							dudtbd111@naver.com
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label for="inputName" class="col-sm-3 control-label">이름</label>
+							<div class="col-sm-7" style="margin-top:6px;">
+							홍길동
+							</div>
+						</div>
+						<br>
+						<div class="form-group">
+							<label for="inputimage" class="col-sm-3 control-label">프로필 사진</label>
+							<div class="col-sm-7" style="margin-top:6px;">
+							<img alt="" src="img/profile.jpg" style="width:200px; height:150px;">
+							</div>
+						</div>
+						<br>				
+						<div class="form-group">
+							<label for="inputPhoneNumber" class="col-sm-3 control-label">전화번호</label>
+							<div class="col-sm-7" style="margin-top:6px;">
+							010-2651-7556
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputAl" class="col-sm-3 control-label">알레르기</label>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox1" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox1">대두</label> <input
+									class="form-check-input" type="checkbox" id="inlineCheckbox2"
+									value="option2"> <label class="form-check-label"
+									for="inlineCheckbox2">땅콩</label> <input
+									class="form-check-input" type="checkbox" id="inlineCheckbox3"
+									value="option2"> <label class="form-check-label"
+									for="inlineCheckbox3">우유</label> <input
+									class="form-check-input" type="checkbox" id="inlineCheckbox4"
+									value="option2"> <label class="form-check-label"
+									for="inlineCheckbox4">게</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox5" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox5">새우</label> <input
+									class="form-check-input" type="checkbox" id="inlineCheckbox6"
+									value="option2"> <label class="form-check-label"
+									for="inlineCheckbox6">참치</label> <input
+									class="form-check-input" type="checkbox" id="inlineCheckbox3"
+									value="option2"> <label class="form-check-label"
+									for="inlineCheckbox7">연어</label> <input
+									class="form-check-input" type="checkbox" id="inlineCheckbox8"
+									value="option2"> <label class="form-check-label"
+									for="inlineCheckbox8">쑥</label>
+							</div>
+							<label for="inputAl" class="col-sm-3 control-label"></label>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox9" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox9">소고기</label> <input
+									class="form-check-input" type="checkbox" id="inlineCheckbox10"
+									value="option2"> <label class="form-check-label"
+									for="inlineCheckbox10">닭고기</label> <input
+									class="form-check-input" type="checkbox" id="inlineCheckbox11"
+									value="option2"> <label class="form-check-label"
+									for="inlineCheckbox11">돼지고기</label>
+							</div>
+							<label for="inputAl" class="col-sm-3 control-label"></label>
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="checkbox"
+									id="inlineCheckbox12" value="option1"> <label
+									class="form-check-label" for="inlineCheckbox12">복숭아</label> <input
+									class="form-check-input" type="checkbox" id="inlineCheckbox13"
+									value="option2"> <label class="form-check-label"
+									for="inlineCheckbox13">민들레</label> <input
+									class="form-check-input" type="checkbox" id="inlineCheckbox14"
+									value="option2"> <label class="form-check-label"
+									for="inlineCheckbox14">계란흰자</label>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-3"></div>
+	<br>
+	<br>
+
+	<footer class="container-fluid text-center">
+		<p>Online Store Copyright</p>
+		<form class="form-inline">
+			Get deals: <input type="email" class="form-control" size="50"
+				placeholder="Email Address">
+			<button type="button" class="btn btn-danger">Sign Up</button>
+		</form>
+	</footer>
+
+</body>
+</html>

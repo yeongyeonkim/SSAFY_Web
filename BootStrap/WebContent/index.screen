@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Screen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://wireframesketcher.com/1.0/model.ecore">
+  <widgets xsi:type="model:Browser" id="2" x="8" y="32" width="1017" height="713" text="Browser&#xA;http://www.safefood.com/index.html&#xA;" measuredWidth="1017" measuredHeight="713">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:Image" id="4" x="18" y="94" measuredWidth="139" measuredHeight="100" src="img/ssafy.png"/>
+  <widgets xsi:type="model:Menu" id="5" x="168" y="112" width="761" text="&amp;File,&amp;Edit,&amp;View,~&amp;Window~,&amp;Help" measuredWidth="761" measuredHeight="27">
+    <items x="5" y="0" width="29" height="27" text="&amp;File"/>
+    <items x="34" y="0" width="31" height="27" text="&amp;Edit"/>
+    <items x="65" y="0" width="37" height="27" text="&amp;View"/>
+    <items x="102" y="0" width="55" height="27" text="~&amp;Window~"/>
+    <items x="157" y="0" width="36" height="27" text="&amp;Help"/>
+  </widgets>
+  <widgets xsi:type="model:VScrollbar" id="6" x="984" y="112" height="609" measuredWidth="17" measuredHeight="609"/>
+  <widgets xsi:type="model:Label" id="7" x="56" y="576" text="Find us" measuredWidth="148" measuredHeight="67">
+    <font size="43px"/>
+  </widgets>
+  <widgets xsi:type="model:CoverFlow" id="8" x="56" y="200" width="865" height="177" measuredWidth="865" measuredHeight="177"/>
+  <widgets xsi:type="model:HLine" id="9" x="56" y="583" width="873" measuredWidth="873" measuredHeight="6"/>
+  <widgets xsi:type="model:SearchField" id="10" x="400" y="390" width="185" text="Search" measuredWidth="185" measuredHeight="24">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:HLine" id="11" x="56" y="382" width="873" measuredWidth="873" measuredHeight="6"/>
+  <widgets xsi:type="model:Text" id="13" x="56" y="642" width="873" height="61" text="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." measuredWidth="873" measuredHeight="61">
+    <font/>
+  </widgets>
+  <widgets xsi:type="model:List" id="14" x="82" y="422" width="814" text="Item One&#xA;Item Two&#xA;Item Three&#xA;|Multiple&#xA;Selection&#xA;(bg:green)|Works like this&#xA;For List, Table and Tree" measuredWidth="814" measuredHeight="151">
+    <font/>
+    <items x="0" y="2" width="814" height="21" text="Item One"/>
+    <items x="0" y="23" width="814" height="21" text="Item Two"/>
+    <items x="0" y="44" width="814" height="21" text="Item Three"/>
+    <items x="0" y="65" width="814" height="21" text="|Multiple"/>
+    <items x="0" y="86" width="814" height="21" text="Selection"/>
+    <items x="0" y="107" width="814" height="21" text="(bg:green)|Works like this"/>
+    <items x="0" y="128" width="814" height="21" text="For List, Table and Tree"/>
+  </widgets>
+  <hRuler/>
+  <vRuler/>
+  <font size="12px"/>
+</model:Screen>
