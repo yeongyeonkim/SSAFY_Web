@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>MVCProject</display-name>
+  <!-- 모든 어플리 케이션이 공유. context-param -->
+  <context-param>
+    <param-name>id</param-name>
+    <param-value>tommy</param-value>
+  </context-param>
+  <context-param>
+    <param-name>pass</param-name>
+    <param-value>lion</param-value>
+  </context-param>
+  
+  <!-- 아래 init param으로 특정 서블릿에만 전송 -->
+  <servlet>
+  	<servlet-name>context</servlet-name>
+  	<servlet-class>com.test.ContextTest</servlet-class>
+  	<init-param>
+  		<param-name>city</param-name>
+  		<param-value>seoul</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>code</param-name>
+  		<param-value>123</param-value>
+  	</init-param>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>context</servlet-name>
+  	<url-pattern>/Context</url-pattern>
+  </servlet-mapping>
+</web-app>
