@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 실행할 query문이 들어있는 파일 
+namespace: 사용할 도메인(테이블)을 구분하기 위해서 붙이는 식별자-->
+
+<mapper namespace="Board">
+
+	<!-- 리절트 맵 정의 : select후의 결과 처리를 위한 부분
+	type에서 지정한 vo를 생성한 후 테이블의 컬럼에서 캆을 뽑아 vo에 setting 
+	그리고 그 vo는 List에 저장되어 리턴 됨 -->
+	<resultMap id="BoardResult"  type="Board"/>
+   <!-- <resultMap id="BoardResult"  type="Board">
+     <result property="num" column="num"/>
+     <result property="name" column="name"/>
+     <result property="wdate" column="wdate"/>
+     <result property="title" column="title"/>
+     <result property="content" column="content"/>
+     <result property="count" column="count"/>
+   </resultMap> -->
+
+  <select id="selectAll" resultMap="BoardResult">
+    select num, name, title, wdate from board order by num desc
+  </select>
+
+   <select id="selectOne" parameterType="java.lang.String" resultMap="BoardResult">
+    select * from board where num = #{xxxxxxxx}
+  </select>
+  <insert id="insert" parameterType="Board">
+  	insert into board values(#{num}, #{pass}, #{name}, curdate(), #{title}, #{content}, 0)
+  </insert>
+	
+  <delete id="delete" parameterType="String">
+  	delete from board where num = #{num}
+  </delete>
+  
+  <select id="search" parameterType="java.lang.String" resultMap="BoardResult">
+  	select * from board where title = #{title}
+  </select>
+</mapper>
