@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- 1. typeAliases -->
+    <typeAliases>
+        <typeAlias alias="Member" type="com.safe.vo.Member"/>
+        <typeAlias alias="SafeFood" type="com.safe.vo.SafeFood"/>
+        
+    </typeAliases>
+
+	<!-- 2. db setting -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC" />
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver" />
+                <property name="url" value="jdbc:mysql://localhost:3306/scott?serverTimezone=UTC&amp;useSSL=false&amp;allowPublicKeyRetrieval=true" />
+                <property name="username" value="scott" />
+                <property name="password" value="tiger" />
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 3. mapper file: table&object mapping -->
+    <mappers>
+      <mapper resource="com/safe/config/Member.xml" />
+      <mapper resource="com/safe/config/SafeFood.xml" />
+    </mappers>
+
+</configuration>
+
+
+
